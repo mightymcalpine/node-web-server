@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 })
 // when this middleware code is executed, only the maintence page is served up
 // since next() is not called, not code, namely the routes below, get ran
-app.use((req, res, next) => res.render('maintenance.hbs'))
+// app.use((req, res, next) => res.render('maintenance.hbs'))
 
 // if you have any static html files in here, and you do not want them to load if the site is in maintenance mode
 // then you need to move this line of code below you code that renders the maintenance page without the next() method
