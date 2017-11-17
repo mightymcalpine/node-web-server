@@ -11,9 +11,7 @@ app.set('view engine', 'hbs')
 // app.use(express.static(path.join(__dirname, '/public')))
 app.use(express.static(path.join(__dirname, '/node_modules')))
 app.use(express.static(path.join(__dirname, '/images')))
-app.use(express.static(path.join(__dirname, '/styles')))
 
-hbs.localsAsTemplateData(app)
 hbs.registerPartials(path.join(__dirname, '/views/partials'))
 hbs.registerHelper('getCurrentYear', () => new Date().getFullYear())
 hbs.registerHelper('capitalizeTxt', (text) => text.toUpperCase())
@@ -39,7 +37,7 @@ app.use(express.static(path.resolve('public')))
 
 // ***** ROUTES *****
 app.get('/', (req, res) => res.render('home.hbs', {
-  title: 'New Heros',
+  title: 'New Heros 57',
   welcomeMsg: "It's time for some new Heros"
 }))
 app.get('/json', (req, res) => res.send({
@@ -52,13 +50,7 @@ app.get('/json', (req, res) => res.send({
 }))
 app.get('/bad', (req, res) => res.send('<h2 style="color: red">Error: Failed to fulfill request</h2>'))
 app.get('/about', (req, res) => res.render('about.hbs', {
-  title: 'About Page'
+  title: 'About Page 57'
 }))
-app.get('/projects', (req, res) => res.render('projects.hbs', {
-  title: 'Projects Page'
-}))
-
-// ***** PASSING LOCAL VARS *****
-app.locals.likes = ['photograpy', 'riding bikes', 'being a dad']
 
 const server = app.listen(port, () => console.log(`Server is listening on port: ${port}`))
